@@ -1,73 +1,72 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
-const skills = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "GSAP",
-  "Node.js",
-  "FastAPI",
-  "Firebase",
-  "ESP32",
-  "IoT",
-  "Flutter",
-  "Linux",
+const values = [
+  "Systems thinking",
+  "Field-first reliability",
+  "Clear interfaces",
+  "Measured delivery",
 ];
 
 export function AboutSection() {
   return (
     <section
-      className="section-y border-t border-cream/8 bg-panel/50"
+      className="section-y border-t border-cream/8 bg-panel/35"
       aria-labelledby="about-heading"
     >
-      <div className="mx-auto grid max-w-container gap-12 px-4 md:grid-cols-2 md:gap-16 md:px-8">
-        <div className="relative mx-auto max-w-sm md:mx-0">
-          <div className="surface overflow-hidden rounded-2xl p-1 shadow-card">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[13px] bg-lifted">
-              <Image
-                src="/images/profilepicture.png"
-                alt="Asiedu Minta Kwaku — professional portrait"
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className="object-cover object-top"
-              />
+      <div className="mx-auto max-w-container px-4 md:px-8">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-16">
+          <div className="mx-auto w-full max-w-sm lg:mx-0">
+            <div className="surface overflow-hidden rounded-xl p-1 shadow-card">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[11px] bg-lifted">
+                <Image
+                  src="/images/profilepicture.png"
+                  alt="Asiedu Minta Kwaku — professional portrait"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 340px"
+                  className="object-cover object-top"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="flex flex-col justify-center space-y-6">
-          <h2
-            id="about-heading"
-            className="font-display text-3xl font-bold tracking-tight text-cream md:text-4xl"
-          >
-            Depth where it counts,{" "}
-            <span className="text-lime">clarity where it ships</span>
-          </h2>
-          <p className="text-lg leading-relaxed text-mute">
-            I work across embedded systems and modern software — sensors, IoT,
-            and connectivity on one side; polished interfaces, APIs, and
-            real-time products on the other. The thread is simple: ship systems
-            that work where it matters.
-          </p>
-          <p className="text-mute">
-            Telecom-aware thinking, disciplined debugging, and a bias toward
-            measurable outcomes — from firmware timing to frontend motion.
-          </p>
-          <div className="flex flex-wrap gap-2 pt-2">
-            {skills.map((s) => (
-              <span
-                key={s}
-                className="rounded-md border border-cream/10 bg-lifted/80 px-2.5 py-1 text-xs font-medium text-cream/90"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
           <div>
-            <Link href="/about" className="link-underline text-sm font-semibold text-cream">
-              Full story →
-            </Link>
+            <SectionHeading id="about-heading" title="About me" />
+            <div className="space-y-5 text-base leading-relaxed text-mute md:text-lg">
+              <p>
+                I build where hardware meets software — embedded devices, IoT
+                telemetry, and the web layers that make data legible to people
+                who need to act on it quickly.
+              </p>
+              <p>
+                My bias is toward systems you can operate: logging you can
+                trust, edge cases named instead of waved away, and interfaces
+                that stay fast when the network does not.
+              </p>
+              <p>
+                Outside deep implementation work, I enjoy exploring new tooling,
+                tightening developer experience, and collaborating with people
+                who care about the problem domain as much as the stack.
+              </p>
+            </div>
+            <ul className="mt-8 flex flex-wrap gap-2">
+              {values.map((v) => (
+                <li
+                  key={v}
+                  className="rounded-full border border-cream/12 bg-lifted/60 px-4 py-2 text-sm font-medium text-cream"
+                >
+                  {v}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8">
+              <Link
+                href="/about"
+                className="text-sm font-semibold text-lime underline decoration-lime/40 underline-offset-[6px] transition hover:decoration-lime"
+              >
+                Read the longer story →
+              </Link>
+            </p>
           </div>
         </div>
       </div>

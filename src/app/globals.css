@@ -53,7 +53,12 @@ body::before {
   }
 
   .section-y {
-    @apply py-20 md:py-[104px];
+    @apply py-16 md:py-24 lg:py-[5.5rem];
+  }
+
+  /** Alternating band like long-scroll dev portfolios (e.g. cephastech.com) */
+  .section-band {
+    @apply bg-panel/40;
   }
 }
 

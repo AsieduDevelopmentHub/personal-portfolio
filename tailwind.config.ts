@@ -25,7 +25,7 @@ const config: Config = {
         display: ["var(--font-syne)", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        container: "1200px",
+        container: "1280px",
       },
       boxShadow: {
         card: "0 0 0 1px rgba(242, 239, 232, 0.06), 0 20px 50px -28px rgba(0, 0, 0, 0.65)",

@@ -2,8 +2,12 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { AboutSection } from "@/components/about/AboutSection";
-import { FeaturedProjects } from "@/components/projects/FeaturedProjects";
-import { ContactCTA } from "@/components/contact/ContactCTA";
+import { SkillsSection } from "@/components/skills/SkillsSection";
+import { PortfolioSection } from "@/components/projects/PortfolioSection";
+import { AchievementsSection } from "@/components/achievements/AchievementsSection";
+import { ServicesSection } from "@/components/services/ServicesSection";
+import { ContactSection } from "@/components/contact/ContactSection";
+import { FocusAreasSection } from "@/components/focus/FocusAreasSection";
 
 export default function HomePage() {
   return (
@@ -12,8 +16,12 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <AboutSection />
-        <FeaturedProjects />
-        <ContactCTA />
+        <SkillsSection />
+        <PortfolioSection />
+        <AchievementsSection />
+        <ServicesSection />
+        <ContactSection />
+        <FocusAreasSection />
       </main>
       <Footer />
     </>

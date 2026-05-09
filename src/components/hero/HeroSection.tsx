@@ -18,10 +18,10 @@ const HeroCanvas = dynamic(() => import("@/components/hero/HeroCanvas"), {
 });
 
 const stats = [
-  { value: "10+", label: "Systems & products" },
-  { value: "4", label: "Core stacks" },
-  { value: "∞", label: "Curiosity loops" },
-  { value: "24/7", label: "Build mindset" },
+  { value: "10+", label: "Projects shipped" },
+  { value: "700+", label: "Commits (tune)" },
+  { value: "3+", label: "Years building" },
+  { value: "12+", label: "Stack tools" },
 ];
 
 export function HeroSection() {
@@ -75,16 +75,16 @@ export function HeroSection() {
             </div>
             <p
               data-hero-line
-              className="max-w-xl text-base leading-relaxed text-mute md:text-lg"
+              className="max-w-2xl text-base leading-relaxed text-mute md:text-lg"
             >
-              I design and ship intelligent systems — embedded hardware, IoT,
-              and polished web products — with the same care for edge cases as
-              for first impressions.
+              I&apos;m an engineer focused on embedded systems, connected devices,
+              and modern web products — shipping solutions that solve real-world
+              problems with a positive, practical impact.
             </p>
             <div className="flex flex-wrap gap-3" data-hero-cta>
-              <Button href="/projects">View my work</Button>
-              <Button href="/contact" variant="ghost">
-                Let&apos;s connect
+              <Button href="/contact">Let&apos;s connect</Button>
+              <Button href="/projects" variant="ghost">
+                View my work
               </Button>
               <Button href="/about#resume" variant="ghost">
                 Résumé

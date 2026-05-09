@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { featuredProjects } from "@/data/projects";
+import { ProjectCard } from "@/components/projects/ProjectCard";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -22,23 +23,14 @@ export default function ProjectsPage() {
             Case studies &amp; builds
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-mute">
-            Deep dives and artifacts will expand here. For now, this index
-            mirrors the featured set from the home page.
+            Deep dives and artifacts will expand here. Each card mirrors the home
+            portfolio layout — live demo and source links activate when URLs are
+            set in <code className="text-cream/80">src/data/projects.ts</code>.
           </p>
-          <ul className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6">
+          <ul className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
             {featuredProjects.map((p) => (
-              <li key={p.slug}>
-                <article className="surface h-full rounded-xl p-8 shadow-card">
-                  <h2 className="font-display text-2xl font-semibold text-cream">
-                    {p.title}
-                  </h2>
-                  <p className="mt-2 text-mute">{p.tagline}</p>
-                  <ul className="mt-4 list-inside list-disc text-sm text-mute">
-                    {p.focus.map((f) => (
-                      <li key={f}>{f}</li>
-                    ))}
-                  </ul>
-                </article>
+              <li key={p.slug} id={p.slug}>
+                <ProjectCard project={p} />
               </li>
             ))}
           </ul>
