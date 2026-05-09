@@ -52,7 +52,7 @@ export function HeroSection() {
             data-hero-line
             className="font-display text-xs font-semibold uppercase tracking-[0.35em] text-neon md:text-sm"
           >
-            Asiedu Development Hub
+            Building intelligent digital systems
           </p>
           <h1
             id="hero-heading"
