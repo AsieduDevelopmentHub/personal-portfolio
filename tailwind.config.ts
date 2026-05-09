@@ -15,6 +15,7 @@ const config: Config = {
         cream: "#f2efe8",
         mute: "#8a8680",
         lime: "#c9e85b",
+        "lime-hover": "#d8f070",
         "lime-dim": "#9fb83a",
         sand: "#b89a6f",
         success: "#7a9e72",
