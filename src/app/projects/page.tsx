@@ -46,13 +46,17 @@ export default function ProjectsPage() {
               are serious.
             </p>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-mute md:text-lg">
-              Each project card supports live demo and repository links once URLs
-              are set in{" "}
+              Cards mirror the home portfolio for branding, but this catalog adds
+              thumbnails, year/role context, and expanded narrative blocks. Wire
+              demo and repo URLs in{" "}
               <code className="rounded bg-lifted px-1.5 py-0.5 text-sm text-cream/90">
                 src/data/projects.ts
               </code>
-              . View details jumps to the anchored card on this page for quick
-              sharing in email threads.
+              ; add PNG or WebP shots under{" "}
+              <code className="rounded bg-lifted px-1.5 py-0.5 text-sm text-cream/90">
+                public/images/projects/
+              </code>{" "}
+              when you have them.
             </p>
             <ul className="mt-10 grid grid-cols-2 gap-6 border-t border-cream/10 pt-10 sm:grid-cols-4">
               {stats.map((s) => (
@@ -153,22 +157,27 @@ export default function ProjectsPage() {
             <SectionHeading
               id="catalog-heading"
               eyebrow="Catalog"
-              title="Featured project cards"
+              title="Project deep dives"
             />
             <p className="-mt-4 mb-10 max-w-3xl text-mute md:-mt-6 md:mb-12">
-              Anchors match slugs so you can link directly (for example{" "}
+              Each entry includes a thumbnail area (screenshot when{" "}
+              <code className="rounded bg-lifted px-1 py-0.5 text-sm text-cream/90">
+                coverImage
+              </code>{" "}
+              is set; otherwise a branded placeholder), plus highlights and
+              technical notes only on this page. Anchors match slugs —{" "}
               <Link
                 href="/projects#sentracore"
                 className="text-lime underline decoration-lime/35 underline-offset-4 hover:decoration-lime/80"
               >
                 /projects#sentracore
               </Link>
-              ).
+              .
             </p>
-            <ul className="grid gap-6 md:grid-cols-2 md:gap-8">
+            <ul className="mx-auto flex max-w-4xl flex-col gap-12 md:gap-14">
               {featuredProjects.map((p) => (
                 <li key={p.slug} id={p.slug}>
-                  <ProjectCard project={p} />
+                  <ProjectCard project={p} variant="detailed" />
                 </li>
               ))}
             </ul>
