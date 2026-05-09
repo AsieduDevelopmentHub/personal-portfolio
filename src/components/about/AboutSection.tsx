@@ -28,7 +28,7 @@ export function AboutSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-midnight">
               <Image
                 src="/images/profilepicture.png"
-                alt=""
+                alt="Asiedu Minta Kwaku — professional portrait"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 className="object-cover object-top"
