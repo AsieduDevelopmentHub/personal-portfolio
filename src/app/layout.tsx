@@ -16,7 +16,6 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://asiedu.dev"),
   title: {
     default: "Asiedu Minta Kwaku — Engineer & Developer",
     template: "%s | Asiedu Minta Kwaku",
