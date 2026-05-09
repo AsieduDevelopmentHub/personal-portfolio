@@ -9,31 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        space: "#050816",
-        carbon: "#0B1120",
-        midnight: "#111827",
-        electric: "#3B82F6",
-        neon: "#22D3EE",
-        violet: "#8B5CF6",
-        soft: "#F8FAFC",
-        glass: "#94A3B8",
-        success: "#10B981",
+        void: "#090807",
+        panel: "#121110",
+        lifted: "#1c1a17",
+        cream: "#f2efe8",
+        mute: "#8a8680",
+        lime: "#c9e85b",
+        "lime-dim": "#9fb83a",
+        sand: "#b89a6f",
+        success: "#7a9e72",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-syne)", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        container: "1400px",
-      },
-      backgroundImage: {
-        "gradient-main": "linear-gradient(135deg, #3B82F6, #8B5CF6)",
-        "gradient-glow": "linear-gradient(135deg, #22D3EE, #3B82F6)",
-        "gradient-bg": "linear-gradient(180deg, #050816, #111827)",
+        container: "1200px",
       },
       boxShadow: {
-        glow: "0 0 60px -12px rgba(59, 130, 246, 0.45)",
-        "glow-cyan": "0 0 40px -8px rgba(34, 211, 238, 0.35)",
+        card: "0 0 0 1px rgba(242, 239, 232, 0.06), 0 20px 50px -28px rgba(0, 0, 0, 0.65)",
+        "card-hover":
+          "0 0 0 1px rgba(201, 232, 91, 0.22), 0 24px 56px -24px rgba(0, 0, 0, 0.55)",
+      },
+      backgroundImage: {
+        "hero-fade":
+          "radial-gradient(ellipse 90% 70% at 50% -30%, rgba(201, 232, 91, 0.08), transparent 55%)",
       },
     },
   },

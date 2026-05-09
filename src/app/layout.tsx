@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const syne = Syne({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-syne",
   display: "swap",
 });
 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Asiedu Minta Kwaku — Engineer & Developer",
     description:
-      "Embedded systems, software engineering, and cinematic digital experiences.",
+      "Embedded systems, software engineering, and interactive systems.",
     type: "website",
     locale: "en_US",
   },
@@ -43,9 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans">
-        <SmoothScroll>{children}</SmoothScroll>
+    <html lang="en" className={`${dmSans.variable} ${syne.variable}`}>
+      <body className="font-sans selection:bg-lime selection:text-void">
+        <SmoothScroll>
+          <div className="relative z-10">{children}</div>
+        </SmoothScroll>
       </body>
     </html>
   );

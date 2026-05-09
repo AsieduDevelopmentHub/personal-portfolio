@@ -10,22 +10,22 @@ function DigitalCore() {
   useFrame((state) => {
     const mesh = ref.current;
     if (!mesh) return;
-    mesh.rotation.x = state.clock.elapsedTime * 0.12;
-    mesh.rotation.y = state.clock.elapsedTime * 0.2;
+    mesh.rotation.x = state.clock.elapsedTime * 0.1;
+    mesh.rotation.y = state.clock.elapsedTime * 0.16;
   });
 
   return (
-    <Float speed={1.8} rotationIntensity={0.35} floatIntensity={0.55}>
-      <mesh ref={ref} scale={1.28}>
+    <Float speed={1.4} rotationIntensity={0.28} floatIntensity={0.45}>
+      <mesh ref={ref} scale={1.22}>
         <icosahedronGeometry args={[1, 3]} />
         <MeshDistortMaterial
-          color="#3B82F6"
-          emissive="#22D3EE"
-          emissiveIntensity={0.32}
-          roughness={0.25}
-          metalness={0.82}
-          distort={0.38}
-          speed={1.8}
+          color="#2a2824"
+          emissive="#4a5a28"
+          emissiveIntensity={0.45}
+          roughness={0.35}
+          metalness={0.72}
+          distort={0.28}
+          speed={1.4}
         />
       </mesh>
     </Float>
@@ -34,20 +34,20 @@ function DigitalCore() {
 
 export default function HeroCanvas() {
   return (
-    <div className="h-full min-h-[240px] w-full md:min-h-[320px]">
+    <div className="h-full min-h-[220px] w-full md:min-h-[300px]">
       <Canvas
-        camera={{ position: [0, 0, 4], fov: 42 }}
-        dpr={[1, 1.75]}
+        camera={{ position: [0, 0, 4], fov: 40 }}
+        dpr={[1, 1.5]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >
         <color attach="background" args={["transparent"]} />
-        <ambientLight intensity={0.45} />
+        <ambientLight intensity={0.35} />
         <directionalLight
-          position={[4, 2, 2]}
-          intensity={1.1}
-          color="#8B5CF6"
+          position={[3, 2, 2]}
+          intensity={0.85}
+          color="#c9e85b"
         />
-        <pointLight position={[-3, -1, 2]} intensity={0.75} color="#22D3EE" />
+        <pointLight position={[-2.5, -1, 2]} intensity={0.45} color="#f2efe8" />
         <DigitalCore />
       </Canvas>
     </div>

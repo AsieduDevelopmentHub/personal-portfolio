@@ -3,29 +3,30 @@ import { Button } from "@/components/ui/Button";
 export function ContactCTA() {
   return (
     <section
-      className="section-y border-t border-white/5"
+      className="section-y border-t border-cream/8"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-container px-4 md:px-8">
-        <div className="glass-strong relative overflow-hidden rounded-[2rem] px-8 py-12 text-center shadow-glow md:px-16 md:py-16">
-          <div className="pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full bg-electric/25 blur-3xl" />
-          <div className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-violet/25 blur-3xl" />
+        <div className="surface relative overflow-hidden rounded-xl px-6 py-12 text-center shadow-card md:px-16 md:py-14">
+          <div
+            className="pointer-events-none absolute -right-16 top-0 h-40 w-40 rounded-full bg-lime/10 blur-3xl"
+            aria-hidden
+          />
           <h2
             id="contact-heading"
-            className="font-display relative text-3xl font-bold text-soft md:text-4xl"
+            className="font-display relative text-3xl font-bold text-cream md:text-4xl"
           >
-            Let&apos;s build something{" "}
-            <span className="text-gradient">remarkable</span>
+            Ready when you are
           </h2>
-          <p className="relative mx-auto mt-4 max-w-2xl text-glass md:text-lg">
-            Open to collaborations on embedded products, full-stack systems, and
-            cinematic interfaces. Tell me about your problem space — I&apos;ll
-            help shape the path.
+          <p className="relative mx-auto mt-4 max-w-2xl text-mute md:text-lg">
+            Embedded products, full-stack builds, or interfaces that need to
+            feel as good as they function — share the brief and we&apos;ll map
+            the path.
           </p>
           <div className="relative mt-8 flex flex-wrap justify-center gap-3">
-            <Button href="/contact">Start a conversation</Button>
+            <Button href="/contact">Get in touch</Button>
             <Button href="/projects" variant="ghost">
-              Explore work
+              Browse projects
             </Button>
           </div>
         </div>

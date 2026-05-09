@@ -9,25 +9,26 @@ const links = [
 
 export function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-6">
-      <nav
-        className="glass flex max-w-container flex-wrap items-center justify-center gap-1 rounded-full px-2 py-2 shadow-glow md:gap-2 md:px-4"
-        aria-label="Main"
-      >
-        <span className="font-display hidden px-3 text-xs font-semibold tracking-[0.2em] text-glass sm:inline md:text-sm">
-          AMK
-        </span>
-        <span className="mx-1 hidden h-4 w-px bg-white/15 sm:block" aria-hidden />
-        {links.map((l) => (
-          <Link
-            key={l.href}
-            href={l.href}
-            className="rounded-full px-3 py-2 text-sm text-glass transition hover:bg-white/10 hover:text-soft md:px-4"
-          >
-            {l.label}
-          </Link>
-        ))}
-      </nav>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-cream/8 bg-void/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-container items-center justify-between gap-6 px-4 py-4 md:px-8">
+        <Link
+          href="/"
+          className="font-display text-sm font-bold tracking-tight text-cream"
+        >
+          AMK<span className="text-lime">.</span>
+        </Link>
+        <nav className="flex flex-wrap items-center justify-end gap-x-1 gap-y-2" aria-label="Main">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="px-3 py-1.5 text-sm text-mute transition hover:text-cream md:px-4"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }

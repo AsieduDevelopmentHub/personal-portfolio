@@ -1,9 +1,8 @@
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-carbon/80 py-10 text-center text-sm text-glass">
+    <footer className="border-t border-cream/10 bg-panel py-12 text-center text-sm text-mute">
       <p>
-        © {new Date().getFullYear()} Asiedu Minta Kwaku. Crafted with Next.js,
-        GSAP, and Three.js.
+        © {new Date().getFullYear()} Asiedu Minta Kwaku — Next.js, GSAP, Three.js
       </p>
     </footer>
   );

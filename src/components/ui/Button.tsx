@@ -15,12 +15,12 @@ type ButtonProps = Common &
 export function Button(props: ButtonProps) {
   const { variant = "primary", className = "", children } = props;
   const base =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric";
+    "inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold tracking-wide transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime";
 
   const styles =
     variant === "primary"
-      ? "bg-gradient-main text-white shadow-glow hover:opacity-95 hover:shadow-glow-cyan"
-      : "glass text-soft hover:border-neon/40 hover:text-white";
+      ? "bg-lime text-void shadow-card hover:bg-lime-hover hover:shadow-card-hover"
+      : "border border-cream/15 bg-transparent text-cream hover:border-lime/50 hover:text-lime";
 
   const merged = `${base} ${styles} ${className}`.trim();
 

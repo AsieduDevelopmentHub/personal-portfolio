@@ -14,8 +14,8 @@ export function ProfilePortrait() {
       const rect = wrap.current.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      const max = 8;
-      wrap.current.style.transform = `perspective(900px) rotateY(${x * max}deg) rotateX(${-y * max}deg) scale3d(1.02,1.02,1.02)`;
+      const max = 6;
+      wrap.current.style.transform = `perspective(1000px) rotateY(${x * max}deg) rotateX(${-y * max}deg)`;
     },
     [reduced],
   );
@@ -23,36 +23,28 @@ export function ProfilePortrait() {
   const onLeave = useCallback(() => {
     if (!wrap.current) return;
     wrap.current.style.transform =
-      "perspective(900px) rotateY(0deg) rotateX(0deg) scale3d(1,1,1)";
+      "perspective(1000px) rotateY(0deg) rotateX(0deg)";
   }, []);
 
   return (
     <div
       ref={wrap}
-      className="relative mx-auto aspect-[3/4] w-full max-w-[320px] transition-transform duration-300 ease-out will-change-transform md:max-w-[380px]"
+      className="relative mx-auto aspect-[3/4] w-full max-w-[300px] transition-transform duration-300 ease-out will-change-transform md:max-w-[360px]"
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       style={{ transformStyle: "preserve-3d" }}
     >
-      <div
-        className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-glow opacity-50 blur-2xl"
-        aria-hidden
-      />
-      <div className="glass-strong relative overflow-hidden rounded-[1.75rem] p-1 shadow-glow">
-        <div className="relative aspect-[3/4] overflow-hidden rounded-[1.5rem] bg-midnight">
+      <div className="surface relative overflow-hidden rounded-2xl p-[3px] shadow-card">
+        <div className="relative aspect-[3/4] overflow-hidden rounded-[13px] bg-lifted">
           <Image
             src="/images/profilepicture.png"
             alt="Asiedu Minta Kwaku"
             fill
             priority
-            sizes="(max-width: 768px) 90vw, 380px"
+            sizes="(max-width: 768px) 90vw, 360px"
             className="object-cover object-top"
           />
         </div>
-        <div
-          className="pointer-events-none absolute inset-0 rounded-[1.75rem] ring-1 ring-inset ring-white/20"
-          aria-hidden
-        />
       </div>
     </div>
   );
