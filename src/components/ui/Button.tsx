@@ -1,21 +1,18 @@
 import Link from "next/link";
-import type { ComponentProps } from "react";
 
-type Base = {
+type Common = {
   children: React.ReactNode;
-  className?: string;
   variant?: "primary" | "ghost";
+  className?: string;
 };
 
-type ButtonAsButton = Base &
-  Omit<ComponentProps<"button">, "className" | "children"> & { href?: never };
+type ButtonProps = Common &
+  (
+    | { href: string; external?: boolean }
+    | ({ href?: undefined } & React.ButtonHTMLAttributes<HTMLButtonElement>)
+  );
 
-type ButtonAsLink = Base &
-  Omit<ComponentProps<typeof Link>, "className" | "children"> & {
-    href: string;
-  };
-
-export function Button(props: ButtonAsButton | ButtonAsLink) {
+export function Button(props: ButtonProps) {
   const { variant = "primary", className = "", children } = props;
   const base =
     "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric";
@@ -28,17 +25,31 @@ export function Button(props: ButtonAsButton | ButtonAsLink) {
   const merged = `${base} ${styles} ${className}`.trim();
 
   if ("href" in props && props.href) {
-    const { href, ...rest } = props;
+    const { href, external } = props;
     return (
-      <Link href={href} className={merged} {...rest}>
+      <Link
+        href={href}
+        className={merged}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {children}
       </Link>
     );
   }
 
-  const { type = "button", ...rest } = props as ButtonAsButton;
+  const btn = props as Common & React.ButtonHTMLAttributes<HTMLButtonElement>;
+  const { type = "button", disabled, onClick, name, value, form, ...rest } = btn;
   return (
-    <button type={type} className={merged} {...rest}>
+    <button
+      type={type}
+      className={merged}
+      disabled={disabled}
+      onClick={onClick}
+      name={name}
+      value={value}
+      form={form}
+      {...rest}
+    >
       {children}
     </button>
   );
