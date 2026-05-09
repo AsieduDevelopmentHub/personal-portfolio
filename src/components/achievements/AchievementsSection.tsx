@@ -4,7 +4,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export function AchievementsSection() {
   return (
     <section
-      className="section-y section-band border-t border-cream/8"
+      id="achievements"
+      className="section-y scroll-mt-28 section-band border-t border-cream/8"
       aria-labelledby="achievements-heading"
     >
       <div className="mx-auto max-w-container px-4 md:px-8">

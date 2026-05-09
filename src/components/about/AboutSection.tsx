@@ -12,7 +12,8 @@ const values = [
 export function AboutSection() {
   return (
     <section
-      className="section-y border-t border-cream/8 bg-panel/35"
+      id="about"
+      className="section-y scroll-mt-28 border-t border-cream/8 bg-panel/35"
       aria-labelledby="about-heading"
     >
       <div className="mx-auto max-w-container px-4 md:px-8">

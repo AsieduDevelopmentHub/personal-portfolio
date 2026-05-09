@@ -8,6 +8,7 @@ import { AchievementsSection } from "@/components/achievements/AchievementsSecti
 import { ServicesSection } from "@/components/services/ServicesSection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { FocusAreasSection } from "@/components/focus/FocusAreasSection";
+import { HomeClosingBand } from "@/components/home/HomeClosingBand";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
         <ServicesSection />
         <ContactSection />
         <FocusAreasSection />
+        <HomeClosingBand />
       </main>
       <Footer />
     </>

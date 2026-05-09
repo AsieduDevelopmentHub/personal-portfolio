@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/Button";
 export function ContactSection() {
   return (
     <section
-      className="section-y section-band border-t border-cream/8"
+      id="contact"
+      className="section-y scroll-mt-28 section-band border-t border-cream/8"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-container px-4 md:px-8">

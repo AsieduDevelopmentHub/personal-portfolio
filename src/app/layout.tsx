@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { getSiteUrl } from "@/lib/site";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -16,6 +17,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "Asiedu Minta Kwaku — Engineer & Developer",
     template: "%s | Asiedu Minta Kwaku",

@@ -7,7 +7,7 @@ export function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="section-y section-band border-t border-cream/8"
+      className="section-y scroll-mt-28 section-band border-t border-cream/8"
       aria-labelledby="portfolio-heading"
     >
       <div className="mx-auto max-w-container px-4 md:px-8">
