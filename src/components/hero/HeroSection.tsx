@@ -75,7 +75,7 @@ export function HeroSection() {
             <Button href="/contact" variant="ghost">
               Contact Me
             </Button>
-            <Button variant="ghost" type="button" disabled title="Add your CV URL">
+            <Button href="/about#resume" variant="ghost">
               Download CV
             </Button>
           </div>
