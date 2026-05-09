@@ -139,10 +139,10 @@ export default function AboutPage() {
               eyebrow="Trajectory"
               title="Background in chapters"
             />
-            <ol className="space-y-8 border-l border-cream/15 pl-6 md:pl-10">
+            <ol className="relative space-y-8 border-l border-cream/15 pl-8 md:pl-11">
               {milestones.map((m) => (
                 <li key={m.title} className="relative">
-                  <span className="absolute -left-[25px] top-1.5 h-2.5 w-2.5 rounded-full bg-lime md:-left-[41px]" />
+                  <span className="absolute -left-[33px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-void bg-lime md:-left-[37px]" />
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime">
                     {m.period}
                   </p>
