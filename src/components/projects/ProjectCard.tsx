@@ -27,7 +27,7 @@ function ProjectThumbnail({
       <div className={`relative ${height} w-full bg-lifted`}>
         <Image
           src={project.coverImage}
-          alt=""
+          alt={`${project.title} preview screenshot`}
           fill
           className="object-cover object-center"
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
@@ -44,6 +44,8 @@ function ProjectThumbnail({
 
   return (
     <div
+      role="img"
+      aria-label={`${project.title} preview (add coverImage for a screenshot)`}
       className={`relative flex w-full items-center justify-center bg-gradient-to-br from-lifted via-panel to-void ${height}`}
     >
       <div
@@ -60,7 +62,6 @@ function ProjectThumbnail({
       >
         {initials}
       </span>
-      <span className="sr-only">{project.title} preview placeholder</span>
     </div>
   );
 }

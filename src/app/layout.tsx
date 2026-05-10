@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
@@ -15,6 +15,12 @@ const syne = Syne({
   variable: "--font-syne",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#090807",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
